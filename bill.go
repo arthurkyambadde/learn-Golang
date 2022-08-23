@@ -55,3 +55,5 @@ func (b *bill) updateTip(tip float64) {
 func (b bill) addItem(name string, price float64) {
 	b.items[name] = price
 }
+
+//save the bill
