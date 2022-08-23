@@ -369,37 +369,70 @@ import "fmt"
 
 // }
 
+// func main() {
+// 	//Learning maps
+// 	//its more of an object in javascript but
+// 	//a different syntax
+
+// 	// menu := map[string]float64{
+// 	// 	"katogo": 2.99,
+// 	// 	"rice":   10.65,
+// 	// 	"irish":  5.22,
+// 	// }
+
+// 	phoneBook := map[int]string{
+// 		77275675:  "Nickson",
+// 		77436372:  "daniel",
+// 		703764574: "jimmy",
+// 	}
+
+// 	phoneBook[703764574] = "jordan"
+
+// 	// fmt.Println(menu)
+// 	// fmt.Println(menu["katogo"])
+
+// 	//Looping through maps
+
+// 	// for key, value := range menu {
+// 	// 	fmt.Println(
+// 	// 		"Our menu today contains -",
+// 	// 		key, ":", value,
+// 	// 	)
+// 	// }
+
+// 	fmt.Println(phoneBook)
+// 	fmt.Println(phoneBook[703764574])
+// }
+
+//Pointers
+//we use an ampasand(&) sign to point at a memory address
+//we place it before the variable name
+//We use the astrix sign(*) to read the value at the memory address
+
+func updateName(n *string) {
+	*n = "Jimmy"
+
+}
+
+func updateTeam(n *string) {
+	*n = "Arsenal"
+}
+
 func main() {
-	//Learning maps
-	//its more of an object in javascript but
-	//a different syntax
+	name := "Arthur"
+	m := &name
 
-	// menu := map[string]float64{
-	// 	"katogo": 2.99,
-	// 	"rice":   10.65,
-	// 	"irish":  5.22,
-	// }
+	team := "barca"
 
-	phoneBook := map[int]string{
-		77275675:  "Nickson",
-		77436372:  "daniel",
-		703764574: "jimmy",
-	}
+	m2 := &team
 
-	phoneBook[703764574] = "jordan"
+	updateName(m)
+	updateTeam(m2)
 
-	// fmt.Println(menu)
-	// fmt.Println(menu["katogo"])
+	fmt.Println("memory location for names is : ", &name, m)
+	fmt.Println(team)
 
-	//Looping through maps
+	// fmt.Println(name)
 
-	// for key, value := range menu {
-	// 	fmt.Println(
-	// 		"Our menu today contains -",
-	// 		key, ":", value,
-	// 	)
-	// }
-
-	fmt.Println(phoneBook)
-	fmt.Println(phoneBook[703764574])
+	fmt.Println("value at memory address is : ", *m)
 }
