@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"math"
-	"strings"
-)
+import "fmt"
 
 // func main() {
 // 	// fmt.Println("hello world")
@@ -289,72 +285,121 @@ import (
 
 // }
 
-func sayGreeting(n string) {
-	fmt.Printf("Good morning %v \n", n)
-}
+// func sayGreeting(n string) {
+// 	fmt.Printf("Good morning %v \n", n)
+// }
 
-func saybye(n string) {
-	fmt.Printf("Good bye %v \n", n)
-}
+// func saybye(n string) {
+// 	fmt.Printf("Good bye %v \n", n)
+// }
 
-func sayGreetingAgain(n string) {
-	fmt.Printf("Good evening %v \n", n)
-}
+// func sayGreetingAgain(n string) {
+// 	fmt.Printf("Good evening %v \n", n)
+// }
 
-func cycleNames(n []string, f func(string)) {
-	for _, value := range n {
-		f(value)
-	}
-}
+// func cycleNames(n []string, f func(string)) {
+// 	for _, value := range n {
+// 		f(value)
+// 	}
+// }
 
-//functions that return a value
+// //functions that return a value
 
-func circleArea(r float64) float64 {
-	return math.Pi * r * r
-}
+// func circleArea(r float64) float64 {
+// 	return math.Pi * r * r
+// }
 
-func getInitials(n string) (string, string) {
+// func getInitials(n string) (string, string) {
 
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
+// 	s := strings.ToUpper(n)
+// 	names := strings.Split(s, " ")
 
-	var initials []string
+// 	var initials []string
 
-	for _, value := range names {
-		initials = append(initials, value[:1])
-	}
+// 	for _, value := range names {
+// 		initials = append(initials, value[:1])
+// 	}
 
-	if len(initials) > 1 {
-		return initials[0], initials[1]
-	}
+// 	if len(initials) > 1 {
+// 		return initials[0], initials[1]
+// 	}
 
-	return initials[0], "_"
+// 	return initials[0], "_"
 
-}
+// }
+
+// func main() {
+
+// 	// names := []string{
+// 	// 	"jimmy", "daniel", "denis", "junior", "jordan",
+// 	// }
+
+// 	// sayGreeting("daniel")
+// 	// sayGreetingAgain(("enock"))
+
+// 	// cycleNames(names, saybye)
+
+// 	// areaOne := circleArea(12)
+// 	// areaTwo := circleArea(12.5)
+
+// 	// fmt.Println(areaOne, areaTwo)
+// 	// fmt.Printf("circle one area %0.2f", areaOne)
+
+// 	firstInitiaal1, secondInitial1 := getInitials(("Kyambadde Arthur"))
+// 	firstInitiaal2, secondInitial2 := getInitials(("Naluyima sandra Bianca"))
+// 	firstInitiaal3, secondInitial3 := getInitials(("when"))
+
+// 	fmt.Println(firstInitiaal1, secondInitial1)
+// 	fmt.Println(firstInitiaal2, secondInitial2)
+// 	fmt.Println(firstInitiaal3, secondInitial3)
+
+// }
+
+//Go Scope
+//values of one file can be used in another but the files are supposed to both
+//run for the action to work
+
+// func main() {
+
+// 	sayHello("Arthur")
+
+// 	for _, v := range points {
+// 		fmt.Println(v)
+// 	}
+
+// }
 
 func main() {
+	//Learning maps
+	//its more of an object in javascript but
+	//a different syntax
 
-	// names := []string{
-	// 	"jimmy", "daniel", "denis", "junior", "jordan",
+	// menu := map[string]float64{
+	// 	"katogo": 2.99,
+	// 	"rice":   10.65,
+	// 	"irish":  5.22,
 	// }
 
-	// sayGreeting("daniel")
-	// sayGreetingAgain(("enock"))
+	phoneBook := map[int]string{
+		77275675:  "Nickson",
+		77436372:  "daniel",
+		703764574: "jimmy",
+	}
 
-	// cycleNames(names, saybye)
+	phoneBook[703764574] = "jordan"
 
-	// areaOne := circleArea(12)
-	// areaTwo := circleArea(12.5)
+	// fmt.Println(menu)
+	// fmt.Println(menu["katogo"])
 
-	// fmt.Println(areaOne, areaTwo)
-	// fmt.Printf("circle one area %0.2f", areaOne)
+	//Looping through maps
 
-	firstInitiaal1, secondInitial1 := getInitials(("Kyambadde Arthur"))
-	firstInitiaal2, secondInitial2 := getInitials(("Naluyima sandra Bianca"))
-	firstInitiaal3, secondInitial3 := getInitials(("when"))
+	// for key, value := range menu {
+	// 	fmt.Println(
+	// 		"Our menu today contains -",
+	// 		key, ":", value,
+	// 	)
+	// }
 
-	fmt.Println(firstInitiaal1, secondInitial1)
-	fmt.Println(firstInitiaal2, secondInitial2)
-	fmt.Println(firstInitiaal3, secondInitial3)
-
+	fmt.Println(phoneBook)
+	fmt.Println(phoneBook[703764574])
 }
