@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 //Struct work ass classes in Go
 //they create a blue print for data
@@ -57,3 +60,17 @@ func (b bill) addItem(name string, price float64) {
 }
 
 //save the bill
+
+func (b bill) saveBill() {
+	data := []byte(b.format())
+
+	fileName := b.name
+
+	err := os.WriteFile("Bills/"+fileName+".txt", data, 0644)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Print("Bill was saved succesfully")
+}
