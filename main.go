@@ -484,8 +484,15 @@ func createBill() bill {
 
 }
 
+func promptOptions(b bill) {
+	reader := bufio.NewReader(os.Stdin)
+
+	opt, _ := getInput("Choose an option (a--add an item, s--save the bill,t--add a tip): s", reader)
+	fmt.Println(opt)
+}
+
 func main() {
 	myBill := createBill()
+	promptOptions(myBill)
 
-	fmt.Println(myBill)
 }
