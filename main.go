@@ -389,50 +389,56 @@ import "fmt"
 // 	phoneBook[703764574] = "jordan"
 
 // 	// fmt.Println(menu)
-// 	// fmt.Println(menu["katogo"])
+// // 	// fmt.Println(menu["katogo"])
 
-// 	//Looping through maps
+// // 	//Looping through maps
 
-// 	// for key, value := range menu {
-// 	// 	fmt.Println(
-// 	// 		"Our menu today contains -",
-// 	// 		key, ":", value,
-// 	// 	)
-// 	// }
+// // 	// for key, value := range menu {
+// // 	// 	fmt.Println(
+// // 	// 		"Our menu today contains -",
+// // 	// 		key, ":", value,
+// // 	// 	)
+// // 	// }
 
-// 	fmt.Println(phoneBook)
-// 	fmt.Println(phoneBook[703764574])
+// // 	fmt.Println(phoneBook)
+// // 	fmt.Println(phoneBook[703764574])
+// // }
+
+// //Pointers
+// //we use an ampasand(&) sign to point at a memory address
+// //we place it before the variable name
+// //We use the astrix sign(*) to read the value at the memory address
+
+// func updateName(n *string) {
+// 	*n = "Jimmy"
+
 // }
 
-//Pointers
-//we use an ampasand(&) sign to point at a memory address
-//we place it before the variable name
-//We use the astrix sign(*) to read the value at the memory address
+// func updateTeam(n *string) {
+// 	*n = "Arsenal"
+// }
 
-func updateName(n *string) {
-	*n = "Jimmy"
+// func main() {
+// 	name := "Arthur"
+// 	m := &name
 
-}
+// 	team := "barca"
 
-func updateTeam(n *string) {
-	*n = "Arsenal"
-}
+// 	m2 := &team
+
+// 	updateName(m)
+// 	updateTeam(m2)
+
+// 	fmt.Println("memory location for names is : ", &name, m)
+// 	fmt.Println(team)
+
+// 	// fmt.Println(name)
+
+// 	fmt.Println("value at memory address is : ", *m)
+// }
 
 func main() {
-	name := "Arthur"
-	m := &name
+	myBill := newBill("Arthur's Bill")
 
-	team := "barca"
-
-	m2 := &team
-
-	updateName(m)
-	updateTeam(m2)
-
-	fmt.Println("memory location for names is : ", &name, m)
-	fmt.Println(team)
-
-	// fmt.Println(name)
-
-	fmt.Println("value at memory address is : ", *m)
+	fmt.Println(myBill.format())
 }
