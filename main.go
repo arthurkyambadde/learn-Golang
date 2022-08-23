@@ -127,13 +127,54 @@ func main() {
 
 	//Go can also infer for us a data type of an array
 
-	var newFriends = [5]string{
-		"jimmy", "daniel", "denis", "junior", "jordan",
-	}
+	// var newFriends = [5]string{
+	// 	"jimmy", "daniel", "denis", "junior", "jordan",
+	// }
 
-	fmt.Println(newFriends)
+	// fmt.Printf("%T", newFriends)
+
+	// fmt.Println(newFriends)
 
 	//length of an array
-	fmt.Println(len(newFriends))
+	// fmt.Println(len(newFriends))
+
+	// ======================================================
+	//=========================================================
+	//=======================================================
+
+	//Slices
+	//they use arrays under the hood
+
+	var scores = []int{20, 30, 40, 50}
+	scores[2] = 45
+
+	//add/append an item to a slice
+	//the append slice method returns a new slice with an added value
+	//the added item is added to the end of the slice
+
+	scores = append(scores, 63)
+
+	//lenght of a slice
+
+	// lengthScores := len(scores)
+
+	//slice ranges
+	//these return a range of values from a slice
+	//it returns the value at first specified index to the value
+	//before the second specified index but not the value at
+	//the second specified index
+
+	rangeOne := scores[1:3]
+	rangetwo := scores[0:7]
+	rangethree := scores[2:] //return all values from position 2 to the end of the slice
+	rangefour := scores[:3]  // retun values from start to position 3 but not including position 3
+
+	fmt.Println("range one :", rangeOne)
+	fmt.Println("range two :", rangetwo)
+	fmt.Println("range three :", rangethree)
+	fmt.Println("range four :", rangefour)
+
+	scores = append(scores, rangeOne...)
+	fmt.Println("scores : ", scores)
 
 }
