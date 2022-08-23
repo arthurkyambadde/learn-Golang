@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// fmt.Println("hello world")
 	//learning strings
@@ -145,14 +143,14 @@ func main() {
 	//Slices
 	//they use arrays under the hood
 
-	var scores = []int{20, 30, 40, 50}
-	scores[2] = 45
+	// var scores = []int{20, 30, 40, 50}
+	// scores[2] = 45
 
-	//add/append an item to a slice
-	//the append slice method returns a new slice with an added value
-	//the added item is added to the end of the slice
+	// //add/append an item to a slice
+	// //the append slice method returns a new slice with an added value
+	// //the added item is added to the end of the slice
 
-	scores = append(scores, 63)
+	// scores = append(scores, 63)
 
 	//lenght of a slice
 
@@ -164,17 +162,41 @@ func main() {
 	//before the second specified index but not the value at
 	//the second specified index
 
-	rangeOne := scores[1:3]
-	rangetwo := scores[0:7]
-	rangethree := scores[2:] //return all values from position 2 to the end of the slice
-	rangefour := scores[:3]  // retun values from start to position 3 but not including position 3
+	// rangeOne := scores[1:3]
+	// rangetwo := scores[0:7]
+	// rangethree := scores[2:] //return all values from position 2 to the end of the slice
+	// rangefour := scores[:3]  // retun values from start to position 3 but not including position 3
 
-	fmt.Println("range one :", rangeOne)
-	fmt.Println("range two :", rangetwo)
-	fmt.Println("range three :", rangethree)
-	fmt.Println("range four :", rangefour)
+	// fmt.Println("range one :", rangeOne)
+	// fmt.Println("range two :", rangetwo)
+	// fmt.Println("range three :", rangethree)
+	// fmt.Println("range four :", rangefour)
 
-	scores = append(scores, rangeOne...)
-	fmt.Println("scores : ", scores)
+	// scores = append(scores, rangeOne...)
+	// fmt.Println("scores : ", scores)
+
+	//Starndard library
+
+	//Strings methods
+	//They return a manipulated copy but they donot mutate the original variable
+
+	// greeting := "good morning everyone"
+
+	//Contains
+	// fmt.Println(strings.Contains(greeting, "one"))
+	// fmt.Println(strings.Contains(greeting, "why"))
+
+	// //ReplaceAll
+	// fmt.Println(strings.ReplaceAll(greeting, "everyone", "Nickson"))
+
+	// //ToUpper
+	// fmt.Println(strings.ToUpper(greeting))
+
+	//Index
+	// fmt.Println(strings.Index(greeting, "o"))
+
+	//Split
+	//It returns a slice of the split string
+	// fmt.Println(strings.Split(greeting, " "))
 
 }
