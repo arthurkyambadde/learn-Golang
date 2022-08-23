@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"sort"
+)
+
 func main() {
 	// fmt.Println("hello world")
 	//learning strings
@@ -198,5 +203,23 @@ func main() {
 	//Split
 	//It returns a slice of the split string
 	// fmt.Println(strings.Split(greeting, " "))
+
+	ages := []int{
+		12, 54, 23, 21, 54, 82, 1, 5,
+	}
+
+	//Sort
+	//it arrages integers in increasing order
+	//it arranges strings in alphabetical order
+	sort.Ints(ages)
+	fmt.Println(ages)
+
+	var names = []string{
+		"jimmy", "daniel", "denis", "junior", "jordan",
+	}
+	sort.Strings(names)
+	fmt.Println(names)
+
+	fmt.Println(sort.SearchStrings(names, "jimmy"))
 
 }
