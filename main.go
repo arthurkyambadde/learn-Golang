@@ -86,29 +86,54 @@ func main() {
 	// fmt.Println("My names is Arthur")
 	// fmt.Println("I am a Front-end dev")
 
-	name := "Arthur"
-	age := 45
+	// name := "Arthur"
+	// age := 45
 
 	//Formatted strings
 	//Printf(formatted strings) %_ is a format specifier
 	//it prints strings on the same line
 
 	//%v prints variables in a default manner
-	fmt.Printf("My name is %v and am aged %v\n", name, age)
+	// fmt.Printf("My name is %v and am aged %v\n", name, age)
 
 	//%q add doublue quotes to strings variables and turns integers variables to #
-	fmt.Printf("My name is %q and am aged %q\n", name, age)
+	// fmt.Printf("My name is %q and am aged %q\n", name, age)
 
 	//%T gets the type of a variable
-	fmt.Printf("My name is %T and am aged %T\n", name, age)
+	// fmt.Printf("My name is %T and am aged %T\n", name, age)
 
 	//%f out puts float numbers and we can specify decimal places and it rounds off numbers
 
-	fmt.Printf("You have scored %0.2f\n", 45.78563)
+	// fmt.Printf("You have scored %0.2f\n", 45.78563)
 
 	//Sprint (save formatted string)
 
-	var str = fmt.Sprintf("my name is %v", name)
-	fmt.Println(str)
+	// var str = fmt.Sprintf("my name is %v", name)
+	// fmt.Println(str)
+
+	//'###################################################################
+	//######################################################################
+	//#####################################################################
+
+	//ARRAYS IN GO
+
+	//we declare an array as a variable
+	//specify its length in sqaure brackets and specify the data type
+	//it has a fixed length
+
+	// var freinds [5]string = [5]string{
+	// 	"jimmy", "daniel", "denis", "junior", "jordan",
+	// }
+
+	//Go can also infer for us a data type of an array
+
+	var newFriends = [5]string{
+		"jimmy", "daniel", "denis", "junior", "jordan",
+	}
+
+	fmt.Println(newFriends)
+
+	//length of an array
+	fmt.Println(len(newFriends))
 
 }
