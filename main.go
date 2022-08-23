@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 // func main() {
 // 	// fmt.Println("hello world")
@@ -437,8 +442,50 @@ import "fmt"
 // 	fmt.Println("value at memory address is : ", *m)
 // }
 
-func main() {
-	myBill := newBill("Arthur's Bill")
+// func main() {
+// 	myBill := newBill("Arthur's Bill")
 
-	fmt.Println(myBill.format())
+// 	myBill.updateTip(15)
+
+// 	myBill.addItem("Katogo", 23.5)
+// 	myBill.addItem("molokoni", 10.5)
+// 	myBill.addItem("kyankya", 12.8)
+// 	myBill.addItem("mayuuni", 7.5)
+// 	myBill.addItem("mukene", 9.5)
+
+// 	fmt.Println(myBill.format())
+
+// }
+
+func getInput(prompt string, r *bufio.Reader) (string, error) {
+
+	fmt.Print(prompt)
+
+	input, err := r.ReadString('\n')
+
+	return strings.TrimSpace(input), err
+
+}
+
+func createBill() bill {
+	reader := bufio.NewReader(os.Stdin)
+
+	// fmt.Print("create a new bill: ")
+	// name, _ := reader.ReadString('\n')
+	// name = strings.TrimSpace(name)
+
+	name, _ := getInput("create a new bill: ", reader)
+
+	b := newBill(name)
+
+	fmt.Println("created the bill - ", b.name)
+
+	return b
+
+}
+
+func main() {
+	myBill := createBill()
+
+	fmt.Println(myBill)
 }
